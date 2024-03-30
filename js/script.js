@@ -9,6 +9,7 @@ const apiKey = "e28f230758f15fbf4a9b66b5ebaa05fa";
 // const apikey = API_KEY;
 const localidade = document.getElementById("localidade");
 
+let buscar = localidade.value;
 
 
 // console.log(localidade.value);
@@ -52,10 +53,11 @@ function actualizaTempo(lat, lon) {
                 console.log(data);
 
 
+                //Se o estado é distinto a "España", aparece o lado do nome o que corresponda
                 let estado = "";
-                if(data.city.country != "ES"){
+                if (data.city.country != "ES") {
                     estado = data.city.country;
-                }else{
+                } else {
                     estado = ""
                 }
 
@@ -102,10 +104,12 @@ function actualizaTempo(lat, lon) {
                 const diasAbre = ["Dom", "Lun", "Mar", "Mér", "Xov", "Ven", "Sáb"]
 
 
-                
+
                 //Predición por horas
 
                 const ampliada = document.getElementById("ampliada");
+                ampliada.innerHTML = "";
+
                 let timeAmpliado
                 let diaAmpliado;
                 let iconoAmpliado;
@@ -119,7 +123,7 @@ function actualizaTempo(lat, lon) {
                     diaAmpliado = new Date(timeAmpliado);
                     let formatDia = diaAmpliado.getDate();
                     let formatMes = mesesAbre[diaAmpliado.getMonth()]
-                    let formatFecha = diasAbre[diaAmpliado.getDay()] + ", " + formatDia + " "+ formatMes;
+                    let formatFecha = diasAbre[diaAmpliado.getDay()] + ", " + formatDia + " " + formatMes;
 
                     //Hora
                     let formatHora = diaAmpliado.getHours() + ":00h";
@@ -140,30 +144,28 @@ function actualizaTempo(lat, lon) {
                     let formatVento = Math.round(data.list[i].wind.speed * 3.6) + "km/h";
                     let direcVento = () => {
                         let direcion = data.list[i].wind.deg;
-                        if(direcion > 0 && direcion < 30 || direcion > 341){
+                        if (direcion > 0 && direcion < 30 || direcion > 341) {
                             return "N"
-                        }else if(direcion >= 31 && direcion <= 70){
+                        } else if (direcion >= 31 && direcion <= 70) {
                             return "NE"
-                        }else if(direcion >= 71 && direcion <= 110){
+                        } else if (direcion >= 71 && direcion <= 110) {
                             return "E"
-                        }else if(direcion >= 111 && direcion <= 160){
+                        } else if (direcion >= 111 && direcion <= 160) {
                             return "SE"
-                        }else if(direcion >= 161 && direcion <= 200){
+                        } else if (direcion >= 161 && direcion <= 200) {
                             return "S"
-                        }else if(direcion >= 201 && direcion <= 250){
+                        } else if (direcion >= 201 && direcion <= 250) {
                             return "SO"
-                        }else if(direcion >= 251 && direcion <= 290){
+                        } else if (direcion >= 251 && direcion <= 290) {
                             return "O"
-                        }else if(direcion >= 291 && direcion <= 340){
+                        } else if (direcion >= 291 && direcion <= 340) {
                             return "NO"
-                        }        
+                        }
                     }
-                    
-                
-
-                    
 
 
+
+                    //Creo cada elemento div e compoñentes coa predición por horas
                     ampliada.innerHTML += `<div class="ampliada__box">
                     <p class="ampliada__data">${formatFecha}\n${formatHora}</p>
                     
@@ -175,24 +177,39 @@ function actualizaTempo(lat, lon) {
                     />
                     <div class="ampliada__right">
                     <p class="ampliada__p">${tempAmpliado} ${formatHumidade}</p>
-                    <p class="ampliada__p">Prob. 🌧: ${probChoiva}</p>
+                    <p class="ampliada__p">Precip.: ${probChoiva}</p>
                     <p class="ampliada__p">Vento: ${formatVento} ${direcVento()}</p>
                     </div>
                     </div>`
-                    
+
                 }
+
+                // let body = document.getElementById("body");
+
+                // console.log(body)
+                // if (data.list[0].sys.pod == "n") {
+                //     body.style.backgroundImage = "url(../assets/fondo_noite.jpg)";
+                // } else if (data.list[0].sys.pod == "d") {
+                //     body.style.backgroundImage = "url(../assets/fondo_dia.jpg)";
+                // } else {
+                //     console.log("non se cambiou o fondo")
+                // }
             }
         )
 
 }
 
 
+function ocultarPresentacion() {
+    document.getElementById("presentacion").style.display = "none";
+    document.getElementById("main").style.display = "block";
+}
 
 
 //Definir coordenadas segun municipio
-function localizacion(municipio){
+function localizacion(municipio) {
     console.log(municipio);
-    if (municipio == ""){
+    if (municipio == "") {
         municipio = "vedra";
     }
     const cordURL = `https://api.openweathermap.org/geo/1.0/direct?q=${municipio}&appid=${apiKey}`;
@@ -207,6 +224,7 @@ function localizacion(municipio){
                 lon = data[0].lon;
 
                 actualizaTempo(lat, lon)
+                ocultarPresentacion();
             }
         )
     localidade.value = ""

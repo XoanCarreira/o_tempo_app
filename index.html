@@ -62,22 +62,13 @@
       href="assets/favicons/favicon_512x512.png"
     />
 
+    <!--Follas de estilos CSS-->
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/popup.css" />
 
-    <!--Enlaces a leafletjs-->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
   </head>
-  <body>
+  <body id="body">
+    <!--Comezo do header-->
     <header class="header">
       <!--Buscador de localidades-->
       <div class="header__buscador">
@@ -95,13 +86,23 @@
           Buscar
         </button>
       </div>
-      <!--Botón para aceso a mapa de choivas-->
-      <div class="header__mapa">
-        <button class="header__choiva">Mapa choiva</button>
-      </div>
     </header>
+    <!--Fin do header-->
 
-    <main class="main">
+    <!--Comezo da presentación-->
+    <div id="presentacion" class="presentacion">
+      <h2 class="presentacion__h2">O tempoApp</h2>
+      <p class="presentacion__p">by /-(··)-\ XoanC</p>
+      <img
+        class="presentacion__img"
+        src="assets/reloj-de-arena.png"
+        alt="Reloxo de area"
+      />
+    </div>
+    <!--Fin de presentación-->
+
+    <!--Comezo do main-->
+    <main id="main" class="main">
       <!--Previsións para o día actual-->
       <section class="main__hoxe">
         <div class="hoxe__localizacion">
@@ -130,29 +131,85 @@
             </p>
           </div>
         </div>
+
+        <!--Simbolo + para ampliar info de hoxe-->
+        <div class="mais__info">
+          <button class="mais__symbol" onclick="tempoHoxe()">+</button>
+        </div>
       </section>
 
+      <!--Ampliación da info de hoxe-->
+      <div id="ampliadaHoxe" class="ampliada__hoxe">
+        <div class="hoxe__container">
+          <div class="hoxe__box">
+            <h5 id="hoxeTitulo"></h5>
+            <p class="hoxe__encabezado">Previsións para hoxe:</p>
+            <table>
+              <tr>
+                <td>Nubrado</td>
+                <td><span id="nubrado"></span>%</td>
+              </tr>
+              <tr>
+                <td>Lat/lon</td>
+                <td><span id="cordenadas"></span></td>
+              </tr>
+              <tr>
+                <td>Humidade</td>
+                <td><span id="humidade"></span>%</td>
+              </tr>
+              <tr>
+                <td>Temperatura</td>
+                <td><span id="temperatura"></span>ºC</td>
+              </tr>
+              <tr>
+                <td>Sensación térmica</td>
+                <td><span id="sensacion"></span></td>
+              </tr>
+              <tr>
+                <td>Temperaturas max/min</td>
+                <td><span id="temperaturas"></span></td>
+              </tr>
+              <tr>
+                <td>Visibilidade</td>
+                <td><span id="visibilidade"></span></td>
+              </tr>
+              <tr>
+                <td>Vento</td>
+                <td><span id="vento"></span></td>
+              </tr>
+              <tr>
+                <td>Amencer</td>
+                <td><span id="amencer"></span>h</td>
+              </tr>
+              <tr>
+                <td>Solpor</td>
+                <td><span id="atardecer"></span>h</td>
+              </tr>
+            </table>
+          </div>
+          <button class="boton__popup" onclick="pecharPopup()">Pechar</button>
+        </div>
+      </div>
+
+      <!--Info por horas-->
       <section id="section__ampliada">
         <div id="ampliada"></div>
       </section>
 
       <div class="espaciador__100"></div>
 
-      <!-- <section class="main__mapa">
-        <div id="map"></div>
-      </section>
-
-      <div class="espaciador__100"></div> -->
     </main>
+    <!--Fin do main-->
 
+    <!--Comezo do footer-->
     <footer class="footer">
       <p class="footer__p">
-        © O Tempo App - Informacion facilitada por OpenWeather
+        © O Tempo App - Información facilitada por OpenWeather
       </p>
     </footer>
+    <!--Fin do footer-->
 
-    <!-- <script src="js/mapa.js"></script> -->
     <script src="js/script.js"></script>
+    <script src="js/predicion_hoxe.js"></script>
   </body>
 </html>
-

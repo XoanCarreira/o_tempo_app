@@ -1,0 +1,76 @@
+.ampliada__hoxe {
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.466);
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 999;
+    place-content: center;
+
+}
+
+.hoxe__container {
+    width: 350px;
+    max-height: 700px;
+    margin: auto;
+
+}
+
+.hoxe__box {
+    background-color: #dddddd;
+    padding: 15px;
+    border-radius: 5px 5px 0 0;
+}
+
+
+
+#hoxeTitulo {
+    font-size: 34px;
+    text-align: center;
+}
+
+.hoxe__encabezado{
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-decoration: underline;
+    margin: 20px 0 10px 0;
+}
+
+.boton__popup {
+    width: 100%;
+    min-height: 50px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin: 0 auto;
+    border-radius: 0 0 5px 5px;
+}
+
+.boton__popup:hover{
+    background-color: #fff;
+    color: #000;
+    border: 5px solid #000;
+    
+}
+
+.mostrar {
+    display: block;
+}
+
+tr td:last-child{
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding-left: 5px;
+}
+
+tr:hover{
+    background-color: #ccc;
+}
