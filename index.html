@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="gl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O Tempo App</title>
+
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HanheldFriendly" content="true" />
+
+    <!-- Meta etiquetas PWA para Apple -->
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      href="assets/favicons/favicon_96x96.png"
+    />
+
+    <!-- Configuración General PWA -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="assets/favicons/favicon_16x16.png" />
+    <link rel="apple-touch-icon" href="assets/favicons/favicon_32x32.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="48x48"
+      href="assets/favicons/favicon_48x48.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="96x96"
+      href="assets/favicons/favicon_96x96.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="assets/favicons/favicon_152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="167x167"
+      href="assets/favicons/favicon_167x167.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicons/favicon_180x180.png"
+    />
+    <link
+      rel="icon"
+      sizes="192x192"
+      href="assets/favicons/favicon_192x192.png"
+    />
+    <link
+      rel="icon"
+      sizes="512x512"
+      href="assets/favicons/favicon_512x512.png"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!--Enlaces a leafletjs-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <!--Buscador de localidades-->
+      <div class="header__buscador">
+        <input
+          id="localidade"
+          class="header__localidade"
+          type="text"
+          placeholder="Introduce unha localidade"
+        />
+        <button
+          onclick="localizacion(localidade.value)"
+          id="botonBuscar"
+          class="header__buscar"
+        >
+          Buscar
+        </button>
+      </div>
+      <!--Botón para aceso a mapa de choivas-->
+      <div class="header__mapa">
+        <button class="header__choiva">Mapa choiva</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <!--Previsións para o día actual-->
+      <section class="main__hoxe">
+        <div class="hoxe__localizacion">
+          <h2 class="hoxe__ubicacion">
+            <img
+              class="hoxe__marcador"
+              src="assets/location_icon.svg"
+              alt="Icono de localización"
+            /><span class="hoxe__localidade"></span>
+          </h2>
+          <p class="hoxe__data"></p>
+        </div>
+        <div class="hoxe__tempo">
+          <div class="hoxe__ceo">
+            <img
+              src="assets/reloj-de-arena.png"
+              alt="Icono coa predición do tempo"
+              class="hoxe__icono"
+            />
+          </div>
+          <div class="hoxe__temperaturas">
+            <p class="hoxe__descripcion"></p>
+            <p class="hoxe__temperatura"></p>
+            <p class="hoxe__maxmin">
+              <span class="hoxe__min"></span>/<span class="hoxe__max"></span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="section__ampliada">
+        <div id="ampliada"></div>
+      </section>
+
+      <div class="espaciador__100"></div>
+
+      <!-- <section class="main__mapa">
+        <div id="map"></div>
+      </section>
+
+      <div class="espaciador__100"></div> -->
+    </main>
+
+    <footer class="footer">
+      <p class="footer__p">
+        © O Tempo App - Informacion facilitada por OpenWeather
+      </p>
+    </footer>
+
+    <!-- <script src="js/mapa.js"></script> -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
+
