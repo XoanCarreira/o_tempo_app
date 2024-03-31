@@ -65,7 +65,7 @@
     <!--Follas de estilos CSS-->
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/popup.css" />
-
+    <link rel="stylesheet" href="css/mareas.css" />
   </head>
   <body id="body">
     <!--Comezo do header-->
@@ -138,7 +138,7 @@
         </div>
       </section>
 
-      <!--Ampliación da info de hoxe-->
+      <!--PopUp - Ampliación da info de hoxe-->
       <div id="ampliadaHoxe" class="ampliada__hoxe">
         <div class="hoxe__container">
           <div class="hoxe__box">
@@ -146,12 +146,12 @@
             <p class="hoxe__encabezado">Previsións para hoxe:</p>
             <table>
               <tr>
-                <td>Nubrado</td>
-                <td><span id="nubrado"></span>%</td>
-              </tr>
-              <tr>
                 <td>Lat/lon</td>
                 <td><span id="cordenadas"></span></td>
+              </tr>
+              <tr>
+                <td>Nubrado</td>
+                <td><span id="nubrado"></span>%</td>
               </tr>
               <tr>
                 <td>Humidade</td>
@@ -191,13 +191,78 @@
         </div>
       </div>
 
+      <!--Info mareas-->
+      <section class="mareas">
+        <div class="portos__container">
+          <button class="mareas__boton" onclick="mostrarMareas()">
+            Mareas
+          </button>
+          <select class="portos__select" name="portos" id="portos">
+            <option class="portos__option" value="">Seleciona un porto</option>
+            <option class="portos__option" value="30">Baiona</option>
+            <option class="portos__option" value="28">Marín</option>
+            <option class="portos__option" value="25">Ribeira</option>
+            <option class="portos__option" value="24">Portosín</option>
+            <option class="portos__option" value="23">Fisterra</option>
+            <option class="portos__option" value="21">Malpica</option>
+            <option class="portos__option" value="18">Ferrol</option>
+            <option class="portos__option" value="16">Cariño</option>
+            <option class="portos__option" value="12">Foz</option>
+          </select>
+        </div>
+
+        <div id="mareasFondo" class="mareas__fondo ocultar">
+          <div class="mareas__container">
+            <div class="mareas__box">
+              <table class="mareas__table">
+                <thead>
+                  <th>Tipo</th>
+                  <th>Hora</th>
+                  <th>Altura</th>
+                </thead>
+                <tr>
+                  <td><span class="mareas__texto" id="mareaTipo1"></span></td>
+                  <td><span class="mareas__texto" id="mareaHora1"></span>h</td>
+                  <td>
+                    <span class="mareas__texto" id="mareaAltura1"></span>mm
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="mareas__texto" id="mareaTipo2"></span></td>
+                  <td><span class="mareas__texto" id="mareaHora2"></span>h</td>
+                  <td>
+                    <span class="mareas__texto" id="mareaAltura2"></span>mm
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="mareas__texto" id="mareaTipo3"></span></td>
+                  <td><span class="mareas__texto" id="mareaHora3"></span>h</td>
+                  <td>
+                    <span class="mareas__texto" id="mareaAltura3"></span>mm
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="mareas__texto" id="mareaTipo4"></span></td>
+                  <td><span class="mareas__texto" id="mareaHora4"></span>h</td>
+                  <td>
+                    <span class="mareas__texto" id="mareaAltura4"></span>mm
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <button class="mareas__boton" onclick="pecharMareas()">
+              Pechar
+            </button>
+          </div>
+        </div>
+      </section>
+
       <!--Info por horas-->
       <section id="section__ampliada">
         <div id="ampliada"></div>
       </section>
 
       <div class="espaciador__100"></div>
-
     </main>
     <!--Fin do main-->
 
@@ -211,5 +276,6 @@
 
     <script src="js/script.js"></script>
     <script src="js/predicion_hoxe.js"></script>
+    <script src="js/mareas.js"></script>
   </body>
 </html>

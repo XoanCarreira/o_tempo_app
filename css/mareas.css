@@ -1,0 +1,64 @@
+
+
+.mareas{
+    max-width: 500px;
+    margin: 15px auto;
+}
+
+.portos__container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+
+.mareas__boton{
+    height: 50px;
+    width: 100px;
+    border: 5px solid #fff;
+    color: #000;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.mareas__box{
+    display: flex;
+    justify-content: center;
+}
+
+.mareas__table{
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.mareas__table td{
+    width: 100px;
+    text-align: center;
+}
+
+.portos__select{
+    height: 50px;
+    max-width:300px ;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 5px solid #fff;
+    padding: 0 20px;
+}
+
+.portos__option{
+    font-size: 1.2rem;
+    color: #000;
+    background-color: transparent;
+    border: 3px solid #fff;
+}
+
+
+.mareas__fondo{
+    background-color: aliceblue;
+    max-width: 350px;
+}
+
+.ocultar{
+    display: none;
+}

@@ -13,15 +13,16 @@
 
 .hoxe__container {
     width: 350px;
-    max-height: 700px;
     margin: auto;
-
+    align-content: center;
+    position: relative;
 }
 
 .hoxe__box {
     background-color: #dddddd;
     padding: 15px;
     border-radius: 5px 5px 0 0;
+    height: 100%;
 }
 
 
@@ -74,3 +75,27 @@ tr td:last-child{
 tr:hover{
     background-color: #ccc;
 }
+
+
+
+/*Media query para poder cerrar o popup cando o alto deste supera ó da pantalla.
+Básicamente reducir fontes e marxes*/
+@media (height < 450px) {
+    #hoxeTitulo{
+        font-size: 1.8rem;
+    }
+
+    .hoxe__encabezado{
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    tr td:last-child{
+        font-size: 1rem;
+    }
+
+    .hoxe__box{
+        padding: 0  15px;
+    }
+
+} 
