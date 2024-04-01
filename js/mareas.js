@@ -1,6 +1,5 @@
 let portos = document.getElementById("portos");
-
-
+let botonMareas = document.querySelector(".mareas__boton");
 
 
 function mostrarMareas() {
@@ -44,6 +43,7 @@ function mostrarMareas() {
         })
     pecharMareas()
 }
+
 
 
 function pecharMareas() {

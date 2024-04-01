@@ -184,16 +184,19 @@ function actualizaTempo(lat, lon) {
 
                 }
 
-                // let body = document.getElementById("body");
+                let body = document.getElementById("body");
 
-                // console.log(body)
-                // if (data.list[0].sys.pod == "n") {
-                //     body.style.backgroundImage = "url(../assets/fondo_noite.jpg)";
-                // } else if (data.list[0].sys.pod == "d") {
-                //     body.style.backgroundImage = "url(../assets/fondo_dia.jpg)";
-                // } else {
-                //     console.log("non se cambiou o fondo")
-                // }
+                console.log(body)
+                if (data.list[0].sys.pod == "n") {
+                    body.style.backgroundImage = "url(../assets/fondo_noite1.jpg)";
+                    body.style.color = "white"
+                } else if (data.list[0].sys.pod == "d") {
+                    body.style.backgroundImage = "url(../assets/fondo_dia.jpg)";
+                    body.style.color = "black"
+
+                } else {
+                    console.log("non se cambiou o fondo")
+                }
             }
         )
 

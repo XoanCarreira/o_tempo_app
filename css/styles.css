@@ -9,8 +9,8 @@
 }
 
 :root{
-    --fonte-principal: Chakra;
-    --fonte-secundaria: Chakra-bold;
+    --fonte-principal: Chakra, Verdana, serif;
+    --fonte-secundaria: Chakra-bold, Verdana, serif;
 }
 
 
@@ -46,6 +46,8 @@ body {
     min-height: 100vh;
     width: 100%;
     background: linear-gradient(rgb(132, 201, 201) 30%, rgb(35, 78, 78) 60%, rgb(8, 36, 36) 95%);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .espaciador__100 {
@@ -176,13 +178,13 @@ button:active {
 
 /*Previsións para hoxe*/
 .main__hoxe {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     max-width: 500px;
     margin: 15px auto;
     padding: 15px;
-    background-color: rgba(58, 144, 214, 0.3);
+    /* background-color: rgba(58, 144, 214, 0.3);
     border-radius: 15px;
-    box-shadow: inset 0 0 10px rgb(0, 0, 0), -10px 10px 10px rgba(0, 0, 0, 0.158);
+    box-shadow: inset 0 0 10px rgb(0, 0, 0), -10px 10px 10px rgba(0, 0, 0, 0.158); */
     position: relative;
 }
 
@@ -196,7 +198,7 @@ button:active {
 }
 
 .hoxe__ubicacion{
-    font-size: 2.2rem;
+    font-size: 3rem;
     max-width: 90%;
 }
 
@@ -312,11 +314,11 @@ button:active {
     max-width: 500px;
     max-height: 550px;
     margin: 50px auto 0;
-    background-color: #07070749;
+    background-color: #00000049;
     padding: 25px 10px;
     border-radius: 10px;
     box-shadow: inset 0 30px 20px #ffffff79, inset 0 -30px 10px 2px #ffffff79 ;
-    border: 3px solid #000;
+    /* border: 3px solid #000; */
 
 }
 

@@ -143,12 +143,13 @@
         <div class="hoxe__container">
           <div class="hoxe__box">
             <h5 id="hoxeTitulo"></h5>
+            <p class="hoxe__cordenadas"><span id="cordenadas"></span></p>
             <p class="hoxe__encabezado">Previsións para hoxe:</p>
             <table>
-              <tr>
+              <!-- <tr>
                 <td>Lat/lon</td>
-                <td><span id="cordenadas"></span></td>
-              </tr>
+                <td></td>
+              </tr> -->
               <tr>
                 <td>Nubrado</td>
                 <td><span id="nubrado"></span>%</td>
@@ -199,11 +200,11 @@
       <!--Info mareas-->
       <section class="mareas">
         <h6 class="mareas__titulo">
-          Seleciona un porto e pulsa "Mareas" para ver as previsións para hoxe:
+          Selecciona un porto e pulsa "Mareas" para ver as previsións:
         </h6>
         <div class="portos__container">
           <button class="mareas__boton" onclick="mostrarMareas()">
-            Mareas
+            Ver mareas
           </button>
           <select
             title="Portos de Galicia"
@@ -211,7 +212,7 @@
             name="portos"
             id="portos"
           >
-            <option class="portos__option" value="">Seleciona un porto</option>
+            <option class="portos__option" value="">Selecciona un porto</option>
             <option class="portos__option" value="30">Baiona</option>
             <option class="portos__option" value="28">Marín</option>
             <option class="portos__option" value="25">Ribeira</option>

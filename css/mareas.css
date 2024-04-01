@@ -4,6 +4,7 @@
     max-width: 500px;
     margin: 15px auto;
     margin-top: 30px;
+    color: #000;
 }
 
 .mareas__titulo{
@@ -15,6 +16,7 @@
 .portos__container{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
     
 }
@@ -22,7 +24,7 @@
 
 .mareas__boton{
     height: 50px;
-    width: 100px;
+    width: 120px;
     border: 3px solid #fff;
     color: #ffffff;
     background-color: transparent;
@@ -72,6 +74,7 @@
 .mareas__fondo{
     background-color: aliceblue;
     max-width: 350px;
+    border-radius: 0 0 10px 10px;
 }
 
 .mareas__container{
@@ -81,11 +84,16 @@
 .mareas__cerrar{
     border: none;
     font-size: 30px;
+    font-weight: 800;
     color: #0000008e;
     background-color: transparent;
     position: absolute;
     top: 5px;
-    left: 320px;
+    left: 90%;
+}
+
+.mareas__cerrar:hover{
+    color: rgb(143, 78, 78);
 }
 
 .ocultar{
