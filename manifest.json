@@ -9,6 +9,15 @@
     "start_url": "./index.html?utm_source=web_app_manifest",
     "scope":"./",
     "lang": "gl-ES",
+    "screenshots":[
+        {
+            "src":"assets/captura_otempoapp.png",
+            "sizes": "345x720",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Wonder Widgets"
+        }
+    ],
     "icons": [
 
         {

@@ -191,13 +191,26 @@
         </div>
       </div>
 
+      <!--Info por horas-->
+      <section id="section__ampliada">
+        <div id="ampliada"></div>
+      </section>
+
       <!--Info mareas-->
       <section class="mareas">
+        <h6 class="mareas__titulo">
+          Seleciona un porto e pulsa "Mareas" para ver as previsións para hoxe:
+        </h6>
         <div class="portos__container">
           <button class="mareas__boton" onclick="mostrarMareas()">
             Mareas
           </button>
-          <select class="portos__select" name="portos" id="portos">
+          <select
+            title="Portos de Galicia"
+            class="portos__select"
+            name="portos"
+            id="portos"
+          >
             <option class="portos__option" value="">Seleciona un porto</option>
             <option class="portos__option" value="30">Baiona</option>
             <option class="portos__option" value="28">Marín</option>
@@ -220,46 +233,13 @@
                   <th>Hora</th>
                   <th>Altura</th>
                 </thead>
-                <tr>
-                  <td><span class="mareas__texto" id="mareaTipo1"></span></td>
-                  <td><span class="mareas__texto" id="mareaHora1"></span>h</td>
-                  <td>
-                    <span class="mareas__texto" id="mareaAltura1"></span>mm
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="mareas__texto" id="mareaTipo2"></span></td>
-                  <td><span class="mareas__texto" id="mareaHora2"></span>h</td>
-                  <td>
-                    <span class="mareas__texto" id="mareaAltura2"></span>mm
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="mareas__texto" id="mareaTipo3"></span></td>
-                  <td><span class="mareas__texto" id="mareaHora3"></span>h</td>
-                  <td>
-                    <span class="mareas__texto" id="mareaAltura3"></span>mm
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="mareas__texto" id="mareaTipo4"></span></td>
-                  <td><span class="mareas__texto" id="mareaHora4"></span>h</td>
-                  <td>
-                    <span class="mareas__texto" id="mareaAltura4"></span>mm
-                  </td>
-                </tr>
+                <tbody id="mareas__body">
+                </tbody>
               </table>
             </div>
-            <button class="mareas__boton" onclick="pecharMareas()">
-              Pechar
-            </button>
+            <button class="mareas__cerrar" onclick="pecharMareas()">X</button>
           </div>
         </div>
-      </section>
-
-      <!--Info por horas-->
-      <section id="section__ampliada">
-        <div id="ampliada"></div>
       </section>
 
       <div class="espaciador__100"></div>

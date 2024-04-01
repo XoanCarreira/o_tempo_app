@@ -3,6 +3,13 @@
 .mareas{
     max-width: 500px;
     margin: 15px auto;
+    margin-top: 30px;
+}
+
+.mareas__titulo{
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 15px;
 }
 
 .portos__container{
@@ -16,10 +23,11 @@
 .mareas__boton{
     height: 50px;
     width: 100px;
-    border: 5px solid #fff;
-    color: #000;
+    border: 3px solid #fff;
+    color: #ffffff;
     background-color: transparent;
     border-radius: 10px;
+    font-size: 1.2rem;
 }
 
 .mareas__box{
@@ -37,13 +45,20 @@
     text-align: center;
 }
 
+.mareas__texto{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
 .portos__select{
     height: 50px;
     max-width:300px ;
     background-color: transparent;
     border-radius: 10px;
-    border: 5px solid #fff;
+    border: 3px solid #fff;
     padding: 0 20px;
+    color: #fff;
+    font-size: 1.2rem;
 }
 
 .portos__option{
@@ -57,6 +72,20 @@
 .mareas__fondo{
     background-color: aliceblue;
     max-width: 350px;
+}
+
+.mareas__container{
+    position: relative;
+}
+
+.mareas__cerrar{
+    border: none;
+    font-size: 30px;
+    color: #0000008e;
+    background-color: transparent;
+    position: absolute;
+    top: 5px;
+    left: 320px;
 }
 
 .ocultar{

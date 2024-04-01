@@ -3,37 +3,49 @@ let portos = document.getElementById("portos");
 
 
 
-function mostrarMareas(){
+function mostrarMareas() {
     const urlMareas = `https://ideihm.covam.es/api-ihm/getmarea?request=gettide&id=${portos.value}&format=json`
     fetch(urlMareas)
         .then(response => response.json())
-        .then(data =>{
+        .then(data => {
             console.log(data)
 
 
-            document.getElementById("mareaTipo1").textContent = data.mareas.datos.marea[0].tipo;
-            document.getElementById("mareaHora1").textContent = data.mareas.datos.marea[0].hora;
-            document.getElementById("mareaAltura1").textContent = data.mareas.datos.marea[0].altura;
-            
-            document.getElementById("mareaTipo2").textContent = data.mareas.datos.marea[1].tipo;
-            document.getElementById("mareaHora2").textContent = data.mareas.datos.marea[1].hora;
-            document.getElementById("mareaAltura2").textContent = data.mareas.datos.marea[1].altura;
-            
-            document.getElementById("mareaTipo3").textContent = data.mareas.datos.marea[2].tipo;
-            document.getElementById("mareaHora3").textContent = data.mareas.datos.marea[2].hora;
-            document.getElementById("mareaAltura3").textContent = data.mareas.datos.marea[2].altura;
-            
-            document.getElementById("mareaTipo4").textContent = data.mareas.datos.marea[3].tipo;
-            document.getElementById("mareaHora4").textContent = data.mareas.datos.marea[3].hora;
-            document.getElementById("mareaAltura4").textContent = data.mareas.datos.marea[3].altura;
+            let infoMareas = data.mareas.datos.marea;
+            let mareasBody = document.getElementById("mareas__body");
+            mareasBody.innerHTML = "";
 
+
+            for (let i = 0; i < infoMareas.length; i++) {
+
+                let tipoMarea = data.mareas.datos.marea[i].tipo;
+                let horaMarea = data.mareas.datos.marea[i].hora + "h";
+                let alturaMarea = parseFloat(data.mareas.datos.marea[i].altura).toFixed(2) + "m";
+
+                //Tradución a galego
+                if(tipoMarea === "pleamar"){
+                    tipoMarea = "Preamar";
+                }else if(tipoMarea === "bajamar"){
+                    tipoMarea = "Baixamar"
+                }
+
+                //Incrusto o html coa info das mareas
+                mareasBody.innerHTML += `<tr>
+                  <td><span class="mareas__texto" >${tipoMarea}</span></td>
+                  <td><span class="mareas__texto" >${horaMarea}</span></td>
+                  <td>
+                    <span class="mareas__texto" >${alturaMarea}</span>
+                  </td>
+                </tr>`
+                
+            }
 
 
         })
-        pecharMareas()
+    pecharMareas()
 }
 
 
-function pecharMareas(){
+function pecharMareas() {
     document.getElementById("mareasFondo").classList.toggle("ocultar");
 }
